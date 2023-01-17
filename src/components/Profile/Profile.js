@@ -5,7 +5,7 @@ import './Profile.css';
 const Profile = () => {
 
     const [users, setUsers] = useState([]);
-    const [data , setData] = useState(false);
+    const [data, setData] = useState(false);
 
     useEffect(() => {
 
@@ -33,15 +33,39 @@ const Profile = () => {
                 setData(false)
             });
 
-        
-            if(data){
 
-                const otherUser = users.filter(person => person.id !== user.id);
-                setUsers(otherUser);
-            }
+        if (data) {
+
+            const otherUser = users.filter(person => person.id !== user.id);
+            setUsers(otherUser);
+        }
 
     }
 
+
+    const reject = (id) => {
+
+
+
+        fetch(`http://localhost:4000/reject/${id}`, {
+            method: 'DELETE',
+        })
+            .then(res => res.json()) // or res.json()
+            .then(data => {
+                setData(data)
+            })
+            .catch(error=>{
+                setData(false)
+            })
+
+
+        if (data) {
+
+            const otherUser = users.filter(person => person.id !== id);
+            setUsers(otherUser);
+        }
+
+    }
 
 
 
@@ -50,7 +74,7 @@ const Profile = () => {
             <h1 className="mt-5" style={{ color: "tomato" }}>User Verification</h1>
             <div className='row information'>
                 {
-                    users.map(user => <Information user={user} accept={accept} key={user.id}></Information>)
+                    users.map(user => <Information user={user} accept={accept} reject={reject} key={user.id}></Information>)
                 }
             </div>
         </div>

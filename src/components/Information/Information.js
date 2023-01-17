@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Information = ({user,accept}) => {
+const Information = ({user,accept,reject}) => {
 
     const{name , address , city , word , number} = user;
 
@@ -14,7 +14,7 @@ const Information = ({user,accept}) => {
             <p>Word no:{word}</p>
             <p>Number: {number}</p>
             <button className='btn btn-success' onClick={()=>accept(user)}>Accept</button>
-            <button className='btn btn-danger'>Reject</button>
+            <button className='btn btn-danger' onClick={()=> reject(user.id)}>Reject</button>
         </div>
     );
 };
