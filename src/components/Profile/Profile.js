@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Cart from '../Cart/Cart';
 import Information from '../Information/Information';
 import './Profile.css';
 
@@ -6,13 +7,25 @@ const Profile = () => {
 
     const [users, setUsers] = useState([]);
     const [data, setData] = useState(false);
+    const [cart , setCart] = useState([]);
 
     useEffect(() => {
 
         fetch('http://localhost:4000/users')
             .then(res => res.json())
             .then(data => setUsers(data))
+        
     }, [])
+
+
+    useEffect(()=>{
+
+        fetch('http://localhost:4000/cart')
+        .then(res => res.json())
+        .then(data => setCart(data))
+    },[])
+
+
 
 
     const accept = (user) => {
@@ -75,6 +88,13 @@ const Profile = () => {
             <div className='row information'>
                 {
                     users.map(user => <Information user={user} accept={accept} reject={reject} key={user.id}></Information>)
+                }
+            </div>
+
+            <div className='col-md-12 mt-5'>
+                <h1>Order section</h1>
+                {
+                    cart.map(list => <Cart list={list} key={list.cid}></Cart>)
                 }
             </div>
         </div>

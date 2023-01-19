@@ -11,7 +11,6 @@ function App() {
     <div>
       <Menubar></Menubar>
       <Routes>
-
         <Route path="/login" element={<PrivateRoute><Login></Login></PrivateRoute>}>
 
         </Route>
