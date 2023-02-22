@@ -1,18 +1,23 @@
 import React from 'react';
+import './ProductInformation.css';
 
-const ProductInformation = ({product}) => {
+const ProductInformation = ({ product }) => {
 
-    const {name ,img, seller , rentPrice , price} = product;
+    const { name, seller, rentPrice, price } = product;
 
     return (
-       <div className='p-5' style={{border:"2px solid grey", borderRadius:"10px"}}>
-            <p>Name: {name}</p>
-            <p>img url: {img}</p>
-            <p>seller: {seller}</p>
-            <p>Rent price: {rentPrice}</p>
-            <p>Price:{price}</p>
-            <button className='btn btn-success'>Confirm</button>
+        <div class="card">
+            <div class="card-header">
+                <h2>User: {name}</h2>
+            </div>
+            <div class="card-body">
+                <p>Seller: {seller}</p>
+            </div>
+            <div class="card-footer">
+              <p>Rent price: {rentPrice}</p>
+            </div>
         </div>
+
     );
 };
 

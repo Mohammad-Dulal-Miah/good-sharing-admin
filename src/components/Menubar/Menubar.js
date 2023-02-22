@@ -8,8 +8,8 @@ import './Menubar.css';
 const Menubar = () => {
     return (
         <div className='position'>
-            <div className='navbar-container container'>
-            <h2><span style={{ color: "tomato" }}>Pase</span></h2>
+            <div className='navbar-container navbar bg-light p-2 container'>
+            <h2><Link to='/profile'><span style={{ color: "tomato" }}>Pase</span></Link></h2>
             <Navbar>
                 <Container>
                     <Nav className="me-auto">

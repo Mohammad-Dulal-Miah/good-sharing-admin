@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Information from '../Information/Information';
+import InnerNavbar from '../InnerNavbar/InnerNavbar';
 
 const User = () => {
 
@@ -73,20 +74,7 @@ const User = () => {
 
     return (
         <div className='container'>
-            <div className='position'>
-                <div className='navbar-container container'>
-
-                    <Navbar>
-                        <Container>
-                            <Nav className="me-auto">
-                                <Link to="/user">user verification</Link>
-                                <Link to="/order">orders</Link>
-                                <Link to='/product'>user product</Link>
-                            </Nav>
-                        </Container>
-                    </Navbar>
-                </div>
-            </div>
+          <InnerNavbar/>
             <h1 className="mt-5 " style={{ color: "tomato" }}>User Verification</h1>
             <div className='row information'>
                 {
