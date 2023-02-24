@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import Information from '../Information/Information';
 import InnerNavbar from '../InnerNavbar/InnerNavbar';
 
@@ -42,6 +41,7 @@ const User = () => {
 
             const otherUser = users.filter(person => person.id !== user.id);
             setUsers(otherUser);
+            <Navigate to='/user'></Navigate>
         }
 
     }
@@ -67,6 +67,7 @@ const User = () => {
 
             const otherUser = users.filter(person => person.id !== id);
             setUsers(otherUser);
+            <Navigate to='/user'></Navigate>
         }
 
     }

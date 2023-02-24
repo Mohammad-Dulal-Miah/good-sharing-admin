@@ -21,7 +21,7 @@ const Cart = ({ list,confirm,cancel }) => {
                 {/* <h2>ProductId: {pid}</h2> */}
             </div>
             <div class="card-body">
-                <p>Seller: {info.rentPrice}</p>
+                <p>Seller: {info.rentPrice+30}</p>
                 <button className='btn btn-success mt-5' onClick={()=> confirm(cartid,pid,info.stock)}>Confirm</button>
                 <br />
                 <btn className='btn btn-danger mt-5' onClick={()=> cancel(cartid)}>Cancel</btn>
