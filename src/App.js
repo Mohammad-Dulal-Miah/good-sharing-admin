@@ -8,6 +8,8 @@ import Profile from './components/Profile/Profile';
 import User from './components/User/User';
 import Order from './components/Order/Order';
 import Product from './components/Product/Product';
+import NotFound from './components/NotFound/NotFound';
+import Messages from './components/Messages/Messages';
 
 function App() {
   return (
@@ -29,9 +31,13 @@ function App() {
           
         </Route>
 
-        <Route path='/profile' element={<PrivateRouteProfile><Profile></Profile></PrivateRouteProfile>}>
+        <Route path="message" element={<Messages></Messages>}></Route>
 
-        </Route>
+        <Route path='/profile' element={<PrivateRouteProfile><Profile></Profile></PrivateRouteProfile>}> </Route>
+
+        <Route path="*" element={<NotFound></NotFound>}></Route>
+
+      
       </Routes>
 
     </div>

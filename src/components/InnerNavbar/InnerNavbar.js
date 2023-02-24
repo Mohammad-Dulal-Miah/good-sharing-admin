@@ -13,6 +13,7 @@ const InnerNavbar = () => {
                         <Link to="/user">user verification</Link>
                         <Link to="/order">orders</Link>
                         <Link to='/product'>user product</Link>
+                        <Link to='/message'>Message</Link>
                     </Nav>
                 </Container>
             </Navbar>
